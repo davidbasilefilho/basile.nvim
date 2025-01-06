@@ -24,6 +24,10 @@ return {
 
     -- Keymaps
 
+    map({ 'n', 'v' }, '<leader>l', function()
+      Snacks.lazygit()
+    end, { desc = '[L]azygit' })
+
     map({ 'n', 'v' }, '<leader>tt', function()
       snacks.terminal.open(nil)
     end, { desc = '[T]oggle [T]erminal' })
