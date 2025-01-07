@@ -10,20 +10,21 @@ return {
         ['core.dirman'] = { -- Manage your directories with Neorg
           config = {
             workspaces = {
-              my_workspace = '~/neorg',
+              neorg = '~/neorg',
             },
+            default_workspace = 'neorg',
           },
         },
+        ['core.export'] = {},
+        ['core.export.markdown'] = { extensions = 'all' },
+        ['core.summary'] = { strategy = 'default' },
       },
-      ['core.export'] = {},
-      ['core.export.markdown'] = {},
-      ['core.summary'] = { strategy = 'default' },
     }
 
     local function tangle_and_export()
       vim.schedule(function()
-        require('neorg.modules.tangle').tangle()
-        require('neorg.export').export 'markdown'
+        vim.cmd 'Neorg tangle current-file'
+        vim.cmd('Neorg export to-file ' .. vim.fn.expand '%:r' .. '.md markdown')
       end)
     end
 
