@@ -39,10 +39,15 @@ return {
       statuscolumn = { enabled = true },
       words = { enabled = true },
       scope = { enabled = true },
+      zen = { enabled = true },
     }
 
     -- Keymaps
-    vim.keymap.set('t', '<C-q>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+    map('t', '<C-q>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+
+    map('n', '<leader>tz', function()
+      snacks.zen()
+    end, { desc = '[T]oggle [Z]en mode' })
 
     map({ 'n', 'v' }, '<leader>l', function()
       snacks.lazygit()
