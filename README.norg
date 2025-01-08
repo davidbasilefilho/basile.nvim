@@ -26,7 +26,7 @@ version: 1.1.1
    - `git`, `make`, `unzip`, `gcc`.
    - `ripgrep`.
    - A clipboard tool (`xclip`, `xsel`, `win32yank` or other depending on the platform).
-   - A {https://www.nerdfonts.com/}[Nerd Font] for the icons.
+   - A {https://www.nerdfonts.com/}[Nerd Font] for the icons, I use Geist Mono.
    - `luarocks` for Neorg.
    - `tmux` for the integration with it.
 

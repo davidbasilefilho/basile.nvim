@@ -30,7 +30,7 @@ It includes a lot of features like LSP, Treesitter, diagnostics, debugging, and 
 - `git`, `make`, `unzip`, `gcc`.
 - `ripgrep`.
 - A clipboard tool (`xclip`, `xsel`, `win32yank` or other depending on the platform).
-- A [Nerd Font](https://www.nerdfonts.com/) for the icons.
+- A [Nerd Font](https://www.nerdfonts.com/) for the icons, I use Geist Mono.
 - `luarocks` for Neorg.
 - `tmux` for the integration with it.
 
