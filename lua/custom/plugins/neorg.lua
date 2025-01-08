@@ -6,7 +6,15 @@ return {
     require('neorg').setup {
       load = {
         ['core.defaults'] = {}, -- Load all the default modules
+        ['core.completion'] = { config = { engine = 'nvim-cmp', name = '[Norg]' } },
+        ['core.integrations.nvim-cmp'] = {},
         ['core.concealer'] = {}, -- Allows for use of icons
+        ['core.keybinds'] = {
+          -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
+          config = {
+            default_keybinds = true,
+          },
+        },
         ['core.dirman'] = { -- Manage your directories with Neorg
           config = {
             workspaces = {
@@ -15,7 +23,10 @@ return {
             default_workspace = 'neorg',
           },
         },
+        ['core.qol.toc'] = {},
+        ['core.qol.todo_items'] = {},
         ['core.export'] = {},
+        ['core.presenter'] = { config = { zen_mode = 'zen-mode' } },
         ['core.export.markdown'] = { extensions = 'all' },
         ['core.summary'] = { strategy = 'default' },
       },
@@ -35,4 +46,5 @@ return {
       callback = tangle_and_export,
     })
   end,
+  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-neorg/neorg-telescope' },
 }

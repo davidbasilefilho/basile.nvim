@@ -49,7 +49,7 @@ return {
       snacks.zen()
     end, { desc = '[T]oggle [Z]en mode' })
 
-    map({ 'n', 'v' }, '<leader>l', function()
+    map({ 'n', 'v' }, '<leader>L', function()
       snacks.lazygit()
     end, { desc = '[L]azygit' })
 

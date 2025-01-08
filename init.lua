@@ -332,6 +332,8 @@ require('lazy').setup({
         { '<leader>a', group = '[A]vante' },
         { '<leader>n', group = '[N]eorg' },
         { '<leader>h', group = '[H]arpoon' },
+        { '<leader>i', group = '[I]nsert' },
+        { '<leader>l', group = '[L]ist' },
         { '<leader>hr', group = '[H]arpoon [R]elative navigation' },
         { '<leader>g', group = '[G]it hunk', mode = { 'n', 'v' } },
       },
