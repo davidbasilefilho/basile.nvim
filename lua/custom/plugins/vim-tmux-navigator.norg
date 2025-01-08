@@ -1,0 +1,42 @@
+@document.meta
+title: vim-tmux-navigator
+description: Navigate between tmux and vim seemlessly
+tangle: [
+  ./vim-tmux-navigator.lua
+]
+authors: David Basile Filho
+categories: [
+  lua
+  neovim
+  tmux
+  plugin
+]
+created: 2025-01-08T19:09:38-0300
+updated: 2025-01-08T19:19:44-0300
+version: 1.1.1
+@end
+
+
+* Vim Tmux Navigator
+  Navigate between tmux and vim seemlessly
+
+  @code lua
+  return {
+    'christoomey/vim-tmux-navigator',
+    cmd = {
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
+      'TmuxNavigatorProcessList',
+    },
+    keys = {
+      { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+      { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+      { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+      { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+      { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+    },
+  }
+  @end

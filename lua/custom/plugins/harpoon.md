@@ -1,8 +1,27 @@
+
+
+
+
+# Harpoon
+
+Use harpoon to quickly navigate to files in a project. It's like global marks, but it always saves when needed and it is on a per-project basis.
+
+
+## Installation
+
+```lua
 return {
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',
   dependencies = { 'nvim-lua/plenary.nvim' },
+```
 
+
+## Telescope integration
+
+Use telescope UI and keymaps to navigate through harpoon files.
+
+```lua
 config = function()
   local harpoon = require 'harpoon'
   harpoon:setup {}
@@ -24,7 +43,14 @@ config = function()
       })
       :find()
   end
+```
 
+
+## Keymaps
+
+Some keymaps to interact with harpoon.
+
+```lua
 vim.keymap.set('n', '<leader>he', function()
   toggle_telescope(harpoon:list())
 end, { desc = 'Open harpoon window' })
@@ -59,3 +85,4 @@ vim.keymap.set('n', '<leader>hrn', function()
 end, { desc = 'Select next harpoon item' })
 end,
 }
+```

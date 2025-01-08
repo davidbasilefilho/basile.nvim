@@ -1,3 +1,13 @@
+
+
+
+
+
+# Vim Tmux Navigator
+
+Navigate between tmux and vim seemlessly
+
+```lua
 return {
   'christoomey/vim-tmux-navigator',
   cmd = {
@@ -16,3 +26,4 @@ return {
     { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
   },
 }
+```

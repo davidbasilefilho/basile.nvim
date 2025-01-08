@@ -1,0 +1,75 @@
+@document.meta
+title: avante.nvim
+description: Cursor-like AI plugin
+authors: David Basile Filho
+categories: 
+created: 2025-01-08T19:01:28-0300
+updated: 2025-01-08T19:20:26-0300
+version: 1.1.1
+@end
+
+* `avante.nvim`
+  Avante is a Cursor-like AI plugin for Neovim that can assist the developer during programming.
+
+** Installation
+   This code snippet installs `avante.nvim` and its dependencies.
+
+@code lua
+return {
+  {
+    'yetone/avante.nvim',
+    event = 'VeryLazy',
+    lazy = false,
+    version = false,
+    opts = {
+      provider = 'copilot',
+      auto_suggestions_provider = 'copilot',
+    },
+    build = 'make',
+    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+    dependencies = {
+      {
+        'zbirenbaum/copilot.lua',
+        cmd = 'Copilot',
+        event = 'InsertEnter',
+        config = function()
+          require('copilot').setup {}
+        end,
+      },
+      {
+        'zbirenbaum/copilot-cmp',
+        config = function()
+          require('copilot_cmp').setup()
+        end,
+      },
+      'stevearc/dressing.nvim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'hrsh7th/nvim-cmp',
+      'nvim-tree/nvim-web-devicons', 
+      'zbirenbaum/copilot.lua', 
+      {
+        'HakonHarnes/img-clip.nvim',
+        event = 'VeryLazy',
+        opts = {
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
+            use_absolute_path = true,
+          },
+        },
+      },
+      {
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { 'markdown', 'Avante' },
+        },
+        ft = { 'markdown', 'Avante' },
+      },
+    },
+  },
+}
+@end
