@@ -2,7 +2,7 @@
 
 
 
-# basile.nvim - Neovim config based
+# basile.nvim - Neovim config
 
 My personal Neovim config, written in Lua. Tailored specifically to my needs, but feel free to use it as a base for your own config. It is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 

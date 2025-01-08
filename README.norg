@@ -8,7 +8,7 @@ updated: 2025-01-08T15:20:02-0300
 version: 1.1.1
 @end
 
-* basile.nvim - Neovim config based
+* basile.nvim - Neovim config
   My personal Neovim config, written in Lua. Tailored specifically to my needs, but feel free to use it as a base for your own config. It is based on {https://github.com/nvim-lua/kickstart.nvim}[kickstart.nvim]
 
 ** Features
