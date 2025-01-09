@@ -253,6 +253,7 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
+      current_line_blame = true,
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -1016,6 +1017,16 @@ require('lazy').setup({
     },
   },
 })
+
+vim.keymap.set('n', '<C-q>', function()
+  vim.cmd 'q'
+end, { desc = 'Quit' })
+vim.keymap.set('n', '<leader>ol', function()
+  vim.cmd 'Lazy'
+end, { desc = '[O]pen [L]azy.nvim' })
+vim.keymap.set('n', '<leader>om', function()
+  vim.cmd 'Mason'
+end, { desc = '[O]pen [M]ason' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
