@@ -335,6 +335,8 @@ require('lazy').setup({
         { '<leader>h', group = '[H]arpoon' },
         { '<leader>i', group = '[I]nsert' },
         { '<leader>l', group = '[L]ist' },
+        { '<leader>m', group = '[M]essages' },
+        { '<leader>o', group = '[O]pen' },
         { '<leader>x', group = 'Trouble' },
         { '<leader>hr', group = '[H]arpoon [R]elative navigation' },
         { '<leader>g', group = '[G]it hunk', mode = { 'n', 'v' } },
@@ -909,6 +911,8 @@ require('lazy').setup({
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
 
+      require('mini.sessions').setup {}
+
       require('mini.pairs').setup()
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
@@ -1021,12 +1025,17 @@ require('lazy').setup({
 vim.keymap.set('n', '<C-q>', function()
   vim.cmd 'q'
 end, { desc = 'Quit' })
+
 vim.keymap.set('n', '<leader>ol', function()
   vim.cmd 'Lazy'
 end, { desc = '[O]pen [L]azy.nvim' })
+
 vim.keymap.set('n', '<leader>om', function()
   vim.cmd 'Mason'
 end, { desc = '[O]pen [M]ason' })
+
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

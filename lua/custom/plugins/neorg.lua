@@ -19,26 +19,25 @@ return {
     config = function()
       require('neorg').setup {
         load = {
-          ['core.defaults'] = {}, -- Load all the default modules
+          ['core.defaults'] = {},
           ['core.completion'] = { config = { engine = 'nvim-cmp', name = '[Norg]' } },
           ['core.integrations.nvim-cmp'] = {},
           ['core.integrations.otter'] = {},
           ['core.integrations.telescope'] = {},
-          ['core.concealer'] = {}, -- Allows for use of icons
+          ['core.concealer'] = {},
           ['core.keybinds'] = {
-            -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
             config = {
               default_keybinds = true,
             },
           },
-          ['core.dirman'] = { -- Manage your directories with Neorg
+          ['core.dirman'] = {
             config = {
               workspaces = {
                 notes = '~/neorg/notes',
                 wiki = '~/neorg/wiki',
                 projects = '~/neorg/projects',
               },
-              default_workspace = 'notes', -- Optional: set a default workspace
+              default_workspace = 'notes',
             },
           },
           ['core.qol.toc'] = {},
@@ -63,7 +62,9 @@ return {
         get_todos('~/neorg/notes', '[^x_]')
       end, { desc = '[N]eorg find [T]odos' })
 
-      vim.keymap.set('n', '<leader>nw', '<cmd>Telescope neorg switch_workspace<CR>')
+      vim.keymap.set('n', '<leader>nw', '<cmd>Telescope neorg switch_workspace<CR>', { desc = '[N]eorg [W]orkspaces' })
+
+      vim.keymap.set('n', '<leader>np', '<cmd>Neorg presenter start<CR>', { desc = '[N]eorg [P]resent' })
 
       local function tangle_and_export()
         vim.schedule(function()

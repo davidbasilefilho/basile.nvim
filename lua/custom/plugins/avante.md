@@ -20,7 +20,7 @@ return {
     version = false,
     opts = {
       provider = 'copilot',
-      auto_suggestions_provider = 'copilot',
+      -- auto_suggestions_provider = 'copilot',
     },
     build = 'make',
     -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
@@ -43,8 +43,8 @@ return {
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
       'hrsh7th/nvim-cmp',
-      'nvim-tree/nvim-web-devicons', 
-      'zbirenbaum/copilot.lua', 
+      'nvim-tree/nvim-web-devicons',
+      'zbirenbaum/copilot.lua',
       {
         'HakonHarnes/img-clip.nvim',
         event = 'VeryLazy',

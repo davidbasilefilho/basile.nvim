@@ -33,21 +33,21 @@ return {
       indent = { enabled = true },
       lazygit = { enabled = true },
       input = { enabled = true },
-      notifier = { enabled = true },
+      -- notifier = { enabled = true },
       quickfile = { enabled = true },
-      scroll = { enabled = true },
+      scroll = { enabled = true, animate = { easing = 'linear', duration = { total = 200 } } },
       statuscolumn = { enabled = true },
       words = { enabled = true },
       scope = { enabled = true },
-      zen = { enabled = true },
+      -- zen = { enabled = true },
     }
 
     -- Keymaps
     map('t', '<C-q>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 
-    map('n', '<leader>tz', function()
-      snacks.zen()
-    end, { desc = '[T]oggle [Z]en mode' })
+    -- map('n', '<leader>tz', function()
+    --   snacks.zen()
+    -- end, { desc = '[T]oggle [Z]en mode' })
 
     map({ 'n', 'v' }, '<leader>L', function()
       snacks.lazygit()
