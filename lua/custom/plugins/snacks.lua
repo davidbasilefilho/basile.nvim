@@ -33,7 +33,7 @@ return {
       indent = { enabled = true },
       lazygit = { enabled = true },
       input = { enabled = true },
-      -- notifier = { enabled = true },
+      notifier = { enabled = true },
       quickfile = { enabled = true },
       scroll = { enabled = true, animate = { easing = 'linear', duration = { total = 200 } } },
       statuscolumn = { enabled = true },

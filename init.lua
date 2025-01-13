@@ -284,6 +284,7 @@ require('lazy').setup({
     opts = {
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.opt.timeoutlen
+
       delay = 0,
       icons = {
         -- set icon mappings to true if you have a Nerd Font
@@ -1022,20 +1023,7 @@ require('lazy').setup({
   },
 })
 
-vim.keymap.set('n', '<C-q>', function()
-  vim.cmd 'q'
-end, { desc = 'Quit' })
-
-vim.keymap.set('n', '<leader>ol', function()
-  vim.cmd 'Lazy'
-end, { desc = '[O]pen [L]azy.nvim' })
-
-vim.keymap.set('n', '<leader>om', function()
-  vim.cmd 'Mason'
-end, { desc = '[O]pen [M]ason' })
-
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
+require 'config.keymaps'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
