@@ -14,7 +14,7 @@ map("n", "<leader>om", function()
 	vim.cmd("Mason")
 end, { desc = "[O]pen [M]ason" })
 
--- Some stuff taken from the primeagen
+-- Some stuff taken from the Primeagen
 noremap("n", "<C-d>", "<C-d>zz")
 noremap("n", "<C-u>", "<C-u>zz")
 
@@ -32,4 +32,4 @@ noremap("n", "N", "Nzzzv")
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
 
-map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+map("n", "<Esc>", "<cmd>nohlsearch<CR>")
