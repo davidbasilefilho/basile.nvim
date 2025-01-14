@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.guicursor = ""
 vim.opt.cursorline = true
 vim.opt.showmode = false
 
