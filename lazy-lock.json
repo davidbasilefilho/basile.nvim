@@ -1,5 +1,6 @@
 {
   "avante.nvim": { "branch": "main", "commit": "a874c2736ab10d45c0df3072f8481301f4404f33" },
+  "better-escape.nvim": { "branch": "master", "commit": "199dcc2643dec5d8dbdab4ec672cf405224dcb3b" },
   "blink.cmp": { "branch": "main", "commit": "a5402a1ae0ef71a3d47e5f82e35cefe7299ba508" },
   "catppuccin": { "branch": "main", "commit": "f67b886d65a029f12ffa298701fb8f1efd89295d" },
   "conform.nvim": { "branch": "master", "commit": "70019124aa4f2e6838be9fbd2007f6d13b27a96d" },

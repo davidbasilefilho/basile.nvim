@@ -24,6 +24,11 @@ My personal Neovim config, written in Lua. Tailored specifically to my needs, bu
 It includes a lot of features like LSP, Treesitter, diagnostics, debugging, and more.
 
 
+## Rewrite!
+
+Recently, I've deleted the repo with the name `basile.nvim`, because it was a fork of [`kickstart.nvim`](https://github.com/nvim-lua/kickstart.nvim). That unnecessarily increased complexity, so I created this new repo. It is more organized and less bloated.
+
+
 ## Dependencies
 
 - Neovim 0.10.0 or higher is recommended.
