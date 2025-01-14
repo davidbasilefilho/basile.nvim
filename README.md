@@ -48,7 +48,7 @@ git clone https://github.com/davidbasilefilho/basile.nvim.git ~/.config/nvim && 
 ```
 
 
-### Special thanks
+## Special thanks
 
 - TJ DeVries and the [`kickstart.nvim`](https://github.com/nvim-lua/kickstart.nvim) project.
 - The Primeagen and [his neovim config](https://github.com/ThePrimeagen/init.lua)
