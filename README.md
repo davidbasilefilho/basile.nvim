@@ -46,3 +46,9 @@ Recently, I've deleted the repo with the name `basile.nvim`, because it was a fo
 mv ~/.config/nvim ~/.config/nvim.bak
 git clone https://github.com/davidbasilefilho/basile.nvim.git ~/.config/nvim && nvim
 ```
+
+
+### Special thanks
+
+- TJ DeVries and the [`kickstart.nvim`](https://github.com/nvim-lua/kickstart.nvim) project.
+- The Primeagen and [his neovim config](https://github.com/ThePrimeagen/init.lua)
