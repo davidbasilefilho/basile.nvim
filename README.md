@@ -27,10 +27,18 @@ It includes a lot of features like LSP, Treesitter, diagnostics, debugging, and 
 ## Showcase
 
 Images demonstrating the config:
+
 ![Dashboard](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/dashboard.png)
+Dashboard
+
 ![Lua](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/lua.png)
+Editing Lua file
+
 ![Avante Chat](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/avante-chat.png)
+AI Chat
+
 ![Avante Chat](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/tmux-nvim.png)
+Tmux with neovim
 
 
 ## Rewrite!
