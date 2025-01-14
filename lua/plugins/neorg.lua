@@ -23,7 +23,6 @@ return {
 					["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
 					["core.integrations.nvim-cmp"] = {},
 					["core.integrations.otter"] = {},
-					["core.integrations.image"] = {},
 					["core.integrations.telescope"] = {},
 					["core.concealer"] = {},
 					["core.keybinds"] = {

@@ -27,14 +27,10 @@ It includes a lot of features like LSP, Treesitter, diagnostics, debugging, and 
 ## Showcase
 
 Images demonstrating the config:
- 
-/img/dashboard.png
- 
-/img/lua.png
- 
-/img/avante-chat.png
- 
-/img/tmux-nvim.png
+![Dashboard](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/dashboard.png)
+![Lua](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/lua.png)
+![Avante Chat](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/avante-chat.png)
+![Avante Chat](https://raw.githubusercontent.com/davidbasilefilho/basile.nvim/refs/heads/main/img/tmux-nvim.png)
 
 
 ## Rewrite!
