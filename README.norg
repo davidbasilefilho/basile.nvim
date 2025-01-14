@@ -1,0 +1,41 @@
+@document.meta
+title: basile.nvim
+description: My Neovim config!
+authors: David Basile Filho
+categories: [
+  neovim
+  lua
+  config
+]
+created: 2025-01-14T15:01:53-0300
+updated: 2025-01-14T15:03:10-0300
+version: 1.1.1
+@end
+
+* basile.nvim - Neovim config
+  My personal Neovim config, written in Lua. Tailored specifically to my needs, but feel free to use it as a base for your own config.
+
+** Features
+*** AI with `avante.nvim`
+    {https://github.com/yetone/avante.nvim}[`avante.nvim`] is a Neovim plugin made to provide a more intelligent completion experience. It provides a more intelligent completion experience by using AI models to predict the next word. It is heavily inspired by the Cursor IDE and offers similar features.
+
+*** Neorg
+{https://github.com/nvim-neorg/neorg}[Neorg] is a note-taking plugin for Neovim. It allows you to create and manage notes in a simple and organized way. I also use it for literate programming, which I used for my {https://github.com/davidbasilefilho/basile.tmux}[`tmux` config], for example.
+
+*** LSP, Treesitter, and more
+    It includes a lot of features like LSP, Treesitter, diagnostics, debugging, and more.
+
+** Dependencies
+   - Neovim 0.10.0 or higher is recommended.
+   - `git`, `make`, `unzip`, `gcc`.
+   - `ripgrep`.
+   - A clipboard tool (`xclip`, `xsel`, `win32yank` or other depending on the platform).
+   - A {https://www.nerdfonts.com/}[Nerd Font] for the icons, I use Geist Mono.
+   - `luarocks` for Neorg.
+   - `tmux` for the integration with it.
+
+** Installation
+   @code bash
+   mv ~/.config/nvim ~/.config/nvim.bak
+   git clone https://github.com/davidbasilefilho/basile.nvim.git ~/.config/nvim && nvim
+   @end
