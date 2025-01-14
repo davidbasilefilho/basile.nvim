@@ -8,7 +8,7 @@ categories: [
   config
 ]
 created: 2025-01-14T15:01:53-0300
-updated: 2025-01-14T15:46:08-0300
+updated: 2025-01-14T16:15:05-0300
 version: 1.1.1
 @end
 
@@ -24,6 +24,13 @@ version: 1.1.1
 
 *** LSP, Treesitter, and more
     It includes a lot of features like LSP, Treesitter, diagnostics, debugging, and more.
+
+** Showcase
+   Images demonstrating the config:
+   .image ./img/dashboard.png
+   .image ./img/lua.png
+   .image ./img/avante-chat.png
+   .image ./img/tmux-nvim.png
 
 ** Rewrite!
    Recently, I've deleted the repo with the name `basile.nvim`, because it was a fork of {https://github.com/nvim-lua/kickstart.nvim}[`kickstart.nvim`]. That unnecessarily increased complexity, so I created this new repo. It is more organized and less bloated.
