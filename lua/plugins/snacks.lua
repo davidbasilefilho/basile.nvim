@@ -34,7 +34,6 @@ return {
 			input = { enabled = true },
 			notifier = { enabled = true },
 			quickfile = { enabled = true },
-			scroll = { enabled = true, animate = { easing = "linear", duration = { total = 200 } } },
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
 			scope = { enabled = true },
