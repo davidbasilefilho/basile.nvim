@@ -5,7 +5,6 @@ vim.opt.cursorline = true
 vim.opt.showmode = false
 
 vim.opt.list = true
-vim.opt.mouse = ""
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.opt.ignorecase = true

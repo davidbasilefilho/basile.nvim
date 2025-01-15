@@ -6,6 +6,7 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-neorg/neorg-telescope",
+			"benlubas/neorg-interim-ls",
 			{
 				"jmbuhr/otter.nvim",
 				ft = "norg",
@@ -20,53 +21,88 @@ return {
 			require("neorg").setup({
 				load = {
 					["core.defaults"] = {},
-					["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
-					["core.integrations.nvim-cmp"] = {},
+
 					["core.integrations.otter"] = {},
+
 					["core.integrations.telescope"] = {},
+
 					["core.concealer"] = {},
+
 					["core.keybinds"] = {
 						config = {
 							default_keybinds = true,
 						},
 					},
+
+					["external.interim-ls"] = {
+						config = {
+							completion_provider = {
+								enable = true,
+								documentation = true,
+								categories = false,
+								people = {
+									enable = false,
+									path = "people",
+								},
+							},
+						},
+					},
+
 					["core.dirman"] = {
 						config = {
 							workspaces = {
-								notes = "~/neorg/notes",
-								wiki = "~/neorg/wiki",
-								projects = "~/neorg/projects",
+								notes = "~/neorg",
+								summaries = "~/neorg/summaries",
+								todo = "~/neorg/todo",
+								reminders = "~/neorg/reminders",
+								knowledge = "~/neorg/wiki",
 							},
 							default_workspace = "notes",
 						},
 					},
+
 					["core.qol.toc"] = {},
+
 					["core.qol.todo_items"] = {},
+
 					["core.export"] = {},
+
 					["core.presenter"] = { config = { zen_mode = "zen-mode" } },
+
 					["core.export.markdown"] = { extensions = "all" },
+
 					["core.summary"] = { strategy = "default" },
 				},
 			})
 
-			local _, neorg = pcall(require, "neorg.core")
-			local dirman = neorg.modules.get_module("core.dirman")
 			local function get_todos(dir, states)
-				local current_workspace = dirman.get_current_workspace()
-				local dir = current_workspace[2]
 				require("telescope.builtin").live_grep({ cwd = dir })
 				vim.fn.feedkeys("^ *([*]+|[-]+) +[(]" .. states .. "[)]")
 			end
 
-			vim.keymap.set("n", "<leader>nt", function()
+			vim.keymap.set("n", "<leader>nft", function()
 				get_todos("~/neorg/notes", "[^x_]")
-			end, { desc = "[N]eorg find [T]odos" })
+			end, { desc = "[N]eorg [f]ind [T]odos" })
 
 			vim.keymap.set(
 				"n",
 				"<leader>nw",
 				"<cmd>Telescope neorg switch_workspace<CR>",
 				{ desc = "[N]eorg [W]orkspaces" }
+			)
+
+			vim.keymap.set(
+				"n",
+				"<leader>nfn",
+				"<cmd>Telescope neorg find_norg_files<CR>",
+				{ desc = "[N]eorg [F]ind [N]org files" }
+			)
+
+			vim.keymap.set(
+				"n",
+				"<leader>nfh",
+				"<cmd>Telescope neorg search_headings<CR>",
+				{ desc = "[N]eorg [F]ind [H]eadings" }
 			)
 
 			vim.keymap.set("n", "<leader>np", "<cmd>Neorg presenter start<CR>", { desc = "[N]eorg [P]resent" })
