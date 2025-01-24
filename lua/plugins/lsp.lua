@@ -21,16 +21,27 @@ return {
 	{
 		"saghen/blink.cmp",
 		build = "cargo +nightly build --release",
+		dependencies = {
+			{
+				"giuxtaposition/blink-cmp-copilot",
+			},
+		},
 		opts = {
 			keymap = { preset = "default" },
 			sources = {
-				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",
 						module = "lazydev.integrations.blink",
 						-- make lazydev completions top priority (see `:h blink.cmp`)
 						score_offset = 100,
+					},
+					copilot = {
+						name = "copilot",
+						module = "blink-cmp-copilot",
+						score_offset = 100,
+						async = true,
 					},
 				},
 			},
