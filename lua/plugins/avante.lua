@@ -7,13 +7,8 @@ return {
 			require("copilot").setup({
 				suggestion = { enabled = false },
 				panel = { enabled = false },
+				copilot_node_command = "node"
 			})
-		end,
-	},
-	{
-		"zbirenbaum/copilot-cmp",
-		config = function()
-			require("copilot_cmp").setup()
 		end,
 	},
 	{
@@ -28,9 +23,9 @@ return {
 			copilot = {
 				endpoint = "https://api.githubcopilot.com/",
 				model = "claude-3.5-sonnet",
-				proxy = nil, -- [protocol://]host[:port] Use this proxy
+				proxy = nil,        -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
-				timeout = 30000, -- Timeout in milliseconds
+				timeout = 30000,    -- Timeout in milliseconds
 				temperature = 0,
 				max_tokens = 8192,
 			},
@@ -46,8 +41,8 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			--- The below dependencies are optional,
-			"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+			"hrsh7th/nvim-cmp",    -- autocompletion for avante commands and mentions
+			"echasnovski/mini.icons",
 			"zbirenbaum/copilot.lua", -- for providers='copilot'
 			{
 				-- support for image pasting
@@ -62,7 +57,7 @@ return {
 							insert_mode = true,
 						},
 						-- required for Windows users
-						use_absolute_path = true,
+						-- use_absolute_path = true,
 					},
 				},
 			},
