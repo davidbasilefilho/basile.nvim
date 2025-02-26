@@ -24,6 +24,7 @@ return {
 		dependencies = {
 			{
 				"giuxtaposition/blink-cmp-copilot",
+				"rafamadriz/friendly-snippets",
 			},
 		},
 		opts = {
