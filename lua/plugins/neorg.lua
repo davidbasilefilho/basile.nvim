@@ -52,10 +52,6 @@ return {
 						config = {
 							workspaces = {
 								notes = "~/neorg",
-								summaries = "~/neorg/summaries",
-								todo = "~/neorg/todo",
-								reminders = "~/neorg/reminders",
-								knowledge = "~/neorg/wiki",
 							},
 							default_workspace = "notes",
 						},
