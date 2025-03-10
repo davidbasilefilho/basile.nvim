@@ -18,17 +18,55 @@ return {
 		version = false, -- set this if you want to always pull the latest change
 		opts = {
 			-- add any opts here
-			provider = "copilot",
-			auto_suggestion_provider = "copilot",
+			provider = "ollama",
+			web_search_engine = {
+				provider = "google",
+				providers = {
+					google = {
+						api_key_name = os.getenv("GOOGLE_API_KEY"),
+						engine_id_name = "neovim",
+						extra_request_body = {},
+						format_response_body = function(body)
+							if body.items ~= nil then
+								local jsn = vim
+										.iter(body.items)
+										:map(
+											function(result)
+												return {
+													title = result.title,
+													link = result.link,
+													snippet = result.snippet,
+												}
+											end
+										)
+										:take(10)
+										:totable()
+								return vim.json.encode(jsn), nil
+							end
+							return "", nil
+						end,
+					},
+				}
+			},
 			copilot = {
 				endpoint = "https://api.githubcopilot.com/",
-				model = "claude-3.7-sonnet",
+				model = "claude-3.7-sonnet-thinking",
 				proxy = nil,        -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
 				timeout = 30000,    -- Timeout in milliseconds
 				temperature = 0,
 				max_tokens = 8192,
 			},
+
+			ollama = {
+				endpoint = "http://127.0.0.1:11434",
+				timeout = 30000, -- Timeout in milliseconds
+				options = {
+					temperature = 0,
+					num_ctx = 4096,
+				},
+			},
+
 			behaviour = {
 				minimize_diffs = true,
 			},
