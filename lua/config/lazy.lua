@@ -22,7 +22,7 @@ require("lazy").setup({
 		{ import = "plugins" },
 	},
 	git {
-		timeout = 9999, // no timeout, my laptop sucks
+		timeout = 9999, -- no timeout, my laptop sucks
 	},
 	-- automatically check for plugin updates
 	checker = { enabled = true },
