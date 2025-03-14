@@ -21,7 +21,7 @@ require("lazy").setup({
 		-- import your plugins
 		{ import = "plugins" },
 	},
-	git {
+	git = {
 		timeout = 9999, -- no timeout, my laptop sucks
 	},
 	-- automatically check for plugin updates
