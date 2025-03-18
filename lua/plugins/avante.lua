@@ -55,7 +55,7 @@ return {
 			},
 			copilot = {
 				endpoint = "https://api.githubcopilot.com/",
-				model = "claude-3.7-sonnet-thinking",
+				model = "claude-3.7-sonnet",
 				proxy = nil,        -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
 				timeout = 30000,    -- Timeout in milliseconds
