@@ -1,10 +1,12 @@
 return {
+	-- Install LSP servers
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
 		opts = {},
 	},
 
+	-- Neovim autocompletion
 	{
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
@@ -29,6 +31,12 @@ return {
 		},
 		opts = {
 			keymap = { preset = "default" },
+
+			appearance = {
+				use_nvim_cmp_as_default = true,
+				nerd_font_variant = 'mono'
+			},
+
 			sources = {
 				default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
 				providers = {
@@ -46,6 +54,7 @@ return {
 					},
 				},
 			},
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 			signature = { enabled = true },
 		},
 	},
@@ -63,7 +72,7 @@ return {
 		config = function()
 			local lsp_defaults = require("lspconfig").util.default_config
 
-			-- Add cmp_nvim_lsp capabilities settings to lspconfig
+			-- Add blink.cmp capabilities settings to lspconfig
 			-- This should be executed before you configure any language server
 			lsp_defaults.capabilities = require("blink.cmp").get_lsp_capabilities()
 			-- LspAttach is where you enable features that only work

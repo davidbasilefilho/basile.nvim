@@ -19,6 +19,11 @@ return {
 		opts = {
 			-- add any opts here
 			provider = "copilot",
+			auto_suggestions_provider = "copilot",
+			suggestion = {
+				debounce = 1000,
+				throttle = 1000,
+			},
 			web_search_engine = {
 				provider = "google",
 				providers = {
@@ -55,11 +60,12 @@ return {
 				allow_insecure = false, -- Allow insecure server connections
 				timeout = 30000,    -- Timeout in milliseconds
 				temperature = 0,
-				max_tokens = 8192,
+				max_tokens = 32768,
 			},
 
 			ollama = {
 				endpoint = "http://127.0.0.1:11434",
+				model = "phi4",
 				timeout = 30000, -- Timeout in milliseconds
 				options = {
 					temperature = 0,
