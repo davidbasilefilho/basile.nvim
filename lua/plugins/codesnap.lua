@@ -8,6 +8,8 @@ return {
 	opts = {
 		save_path = "~/Pictures",
 		has_breadcrumbs = true,
-		bg_theme = "bamboo",
+		has_line_number = true,
+		bg_color = "#535c68",
+		code_font_family = "JetBrainsMono Nerd Font",
 	},
 }
