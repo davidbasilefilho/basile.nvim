@@ -1,5 +1,6 @@
 return {
 	"windwp/nvim-ts-autotag",
+	event = "BufReadPre",
 	opts = {
 		opts = {
 			enable_close = true,

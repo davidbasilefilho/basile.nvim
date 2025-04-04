@@ -9,6 +9,22 @@ return {
 				panel = { enabled = false },
 				copilot_node_command = "node"
 			})
+
+			local util = require("copilot.util")
+			local orig_get_editor_configuration = util.get_editor_configuration
+
+			---@diagnostic disable-next-line: duplicate-set-field
+			util.get_editor_configuration = function()
+				local config = orig_get_editor_configuration()
+
+				return vim.tbl_extend("force", config, {
+					github = {
+						copilot = {
+							selectedCompletionModel = "gpt-4o-copilot",
+						},
+					},
+				})
+			end
 		end,
 	},
 	{
