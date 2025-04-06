@@ -26,6 +26,7 @@ return {
 		dependencies = {
 			{
 				"giuxtaposition/blink-cmp-copilot",
+				'Kaiser-Yang/blink-cmp-avante',
 				"rafamadriz/friendly-snippets",
 			},
 		},
@@ -38,12 +39,19 @@ return {
 			},
 
 			sources = {
-				default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
+				default = {
+					"avante",
+					"lazydev",
+					"lsp",
+					"path",
+					"snippets",
+					"buffer",
+					"copilot",
+				},
 				providers = {
 					lazydev = {
 						name = "LazyDev",
 						module = "lazydev.integrations.blink",
-						-- make lazydev completions top priority (see `:h blink.cmp`)
 						score_offset = 100,
 					},
 					copilot = {
@@ -52,6 +60,14 @@ return {
 						score_offset = 100,
 						async = true,
 					},
+					avante = {
+						module = 'blink-cmp-avante',
+						name = 'Avante',
+						score_offset = 100,
+						opts = {
+							-- options for blink-cmp-avante
+						},
+					}
 				},
 			},
 			fuzzy = { implementation = "prefer_rust_with_warning" },
@@ -69,6 +85,7 @@ return {
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
 		},
+
 		config = function()
 			local lsp_defaults = require("lspconfig").util.default_config
 

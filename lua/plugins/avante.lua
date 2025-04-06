@@ -31,44 +31,27 @@ return {
 		"yetone/avante.nvim",
 		event = "VeryLazy",
 		lazy = false,
-		version = false, -- set this if you want to always pull the latest change
+		version = false,
 		opts = {
-			-- add any opts here
 			provider = "copilot",
 			auto_suggestions_provider = "copilot",
+
 			suggestion = {
 				debounce = 1000,
 				throttle = 1000,
 			},
+
 			web_search_engine = {
-				provider = "google",
+				provider = "tavily",
 				providers = {
-					google = {
-						api_key_name = os.getenv("GOOGLE_API_KEY"),
-						engine_id_name = "neovim",
-						extra_request_body = {},
-						format_response_body = function(body)
-							if body.items ~= nil then
-								local jsn = vim
-										.iter(body.items)
-										:map(
-											function(result)
-												return {
-													title = result.title,
-													link = result.link,
-													snippet = result.snippet,
-												}
-											end
-										)
-										:take(10)
-										:totable()
-								return vim.json.encode(jsn), nil
-							end
-							return "", nil
-						end,
+					api_key_name = "TAVILY_API_KEY",
+					extra_request_body = {
+						include_answer = "basic",
 					},
+					format_response_body = function(body) return body.answer, nil end,
 				}
 			},
+
 			copilot = {
 				endpoint = "https://api.githubcopilot.com/",
 				model = "claude-3.5-sonnet",
@@ -76,20 +59,35 @@ return {
 				allow_insecure = false, -- Allow insecure server connections
 				timeout = 30000,    -- Timeout in milliseconds
 				temperature = 0,
-				max_tokens = 32768,
+				max_tokens = 20480,
 			},
 
-			ollama = {
-				endpoint = "http://127.0.0.1:11434",
-				model = "phi4",
-				timeout = 30000, -- Timeout in milliseconds
-				options = {
-					temperature = 0,
-					num_ctx = 4096,
+			vendors = {
+				copilot_claude = {
+					__inherited_from = "copilot",
+					model = "claude-3.7-sonnet",
+				},
+				copilot_claude_thinking = {
+					__inherited_from = "copilot",
+					model = "claude-3.7-sonnet-thought",
+				},
+				copilot_o1 = {
+					__inherited_from = "copilot",
+					model = "o1",
+				},
+				copilot_o3_mini = {
+					__inherited_from = "copilot",
+					model = "o3-mini",
+				},
+				copilot_gemini = {
+					__inherited_from = "copilot",
+					model = "gemini-2.0-flash-001",
 				},
 			},
 
 			behaviour = {
+				auto_suggestions = false,
+				enable_cursor_planning_mode = true,
 				minimize_diffs = true,
 			},
 		},
@@ -101,8 +99,10 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			--- The below dependencies are optional,
-			"hrsh7th/nvim-cmp",    -- autocompletion for avante commands and mentions
+			-- "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+			"nvim-telescope/telescope.nvim",
 			"echasnovski/mini.icons",
+			'saghen/blink.cmp',
 			"zbirenbaum/copilot.lua", -- for providers='copilot'
 			{
 				-- support for image pasting
