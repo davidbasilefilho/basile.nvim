@@ -106,7 +106,6 @@ return {
 			"MunifTanjim/nui.nvim",
 			--- The below dependencies are optional,
 			-- "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-			"nvim-telescope/telescope.nvim",
 			"echasnovski/mini.icons",
 			'saghen/blink.cmp',
 			"zbirenbaum/copilot.lua", -- for providers='copilot'
