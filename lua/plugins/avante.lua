@@ -35,6 +35,8 @@ return {
 		opts = {
 			provider = "copilot",
 			auto_suggestions_provider = "copilot",
+			cursor_applying_provider = "copilot",
+			memory_summary_provider = "copilot_gpt_4o",
 
 			suggestion = {
 				debounce = 1000,
@@ -82,6 +84,10 @@ return {
 				copilot_gemini = {
 					__inherited_from = "copilot",
 					model = "gemini-2.0-flash-001",
+				},
+				copilot_gpt_4o = {
+					__inherited_from = "copilot",
+					model = "gpt-4o-2024-11-20",
 				},
 			},
 
