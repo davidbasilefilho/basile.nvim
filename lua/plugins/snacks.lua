@@ -85,10 +85,10 @@ return {
 
 		-- Pickers
 		map('n', '<leader>sf', function() snacks.picker.files({ hidden = true }) end, { desc = "[S]earch [F]iles" })
-		map('n', '<leader>sg', snacks.picker.grep, { desc = "[S]earch [G]rep" })
+		map('n', '<leader>sg', function() snacks.picker.grep({ hidden = true }) end, { desc = "[S]earch [G]rep" })
 		map('n', '<leader>sb', snacks.picker.buffers, { desc = "[S]earch [B]uffers" })
 		map('n', '<leader>sd', snacks.picker.diagnostics, { desc = "[S]earch [D]iagnostics" })
-		map('n', '<leader>sw', snacks.picker.grep_word, { desc = "[S]earch [S]nippets" })
+		map('n', '<leader>sw', snacks.picker.grep_word, { desc = "[S]earch [G]rep [W]ord" })
 		map('n', '<leader>ss', snacks.picker.pickers, { desc = "[S]earch [P]ickers" })
 		map('n', '<leader>sk', snacks.picker.keymaps, { desc = "[S]earch [K]eymaps" })
 		map('n', '<leader>st', snacks.picker.colorschemes, { desc = "[S]earch [T]hemes" })
