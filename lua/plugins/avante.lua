@@ -33,25 +33,13 @@ return {
 		lazy = false,
 		version = false,
 		opts = {
-			provider = "copilot",
-			auto_suggestions_provider = "copilot",
-			cursor_applying_provider = "copilot",
-			memory_summary_provider = "copilot_gpt_4o",
-
-			suggestion = {
-				debounce = 1000,
-				throttle = 1000,
-			},
+			provider = "copilot_gemini_2.5_pro",
+			cursor_applying_provider = "copilot_gpt_4.1",
+			memory_summary_provider = "copilot_gpt_4.1",
 
 			web_search_engine = {
 				provider = "tavily",
-				providers = {
-					api_key_name = "TAVILY_API_KEY",
-					extra_request_body = {
-						include_answer = "basic",
-					},
-					format_response_body = function(body) return body.answer, nil end,
-				}
+				proxy = nil,
 			},
 
 			copilot = {
@@ -88,6 +76,14 @@ return {
 				copilot_gpt_4o = {
 					__inherited_from = "copilot",
 					model = "gpt-4o-2024-11-20",
+				},
+				["copilot_gpt_4.1"] = {
+					__inherited_from = "copilot",
+					model = "gpt-4.1",
+				},
+				["copilot_gemini_2.5_pro"] = {
+					__inherited_from = "copilot",
+					model = "gemini-2.5-pro",
 				},
 			},
 
