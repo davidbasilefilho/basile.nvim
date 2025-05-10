@@ -7,7 +7,7 @@ return {
 			require("copilot").setup({
 				suggestion = { enabled = false },
 				panel = { enabled = false },
-				copilot_node_command = "node"
+				copilot_node_command = "node",
 			})
 
 			local util = require("copilot.util")
@@ -45,9 +45,9 @@ return {
 			copilot = {
 				endpoint = "https://api.githubcopilot.com/",
 				model = "o4-mini",
-				proxy = nil,        -- [protocol://]host[:port] Use this proxy
+				proxy = nil, -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
-				timeout = 30000,    -- Timeout in milliseconds
+				timeout = 30000, -- Timeout in milliseconds
 				temperature = 0,
 				max_tokens = 20480,
 			},
@@ -114,7 +114,7 @@ return {
 			--- The below dependencies are optional,
 			-- "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
 			"echasnovski/mini.icons",
-			'saghen/blink.cmp',
+			"saghen/blink.cmp",
 			"zbirenbaum/copilot.lua", -- for providers='copilot'
 			{
 				-- support for image pasting
@@ -136,10 +136,6 @@ return {
 			{
 				-- Make sure to set this up properly if you have lazy=true
 				"MeanderingProgrammer/render-markdown.nvim",
-				opts = {
-					file_types = { "markdown", "Avante" },
-				},
-				ft = { "markdown", "Avante" },
 			},
 		},
 	},
