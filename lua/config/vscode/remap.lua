@@ -28,8 +28,3 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Lazy
 map("n", "<leader>lz", "<cmd>Lazy<CR>", { desc = "[L]a[Z]y" })
-
-return {
-	map,
-	noremap,
-}
