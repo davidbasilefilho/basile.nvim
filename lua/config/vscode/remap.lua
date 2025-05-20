@@ -11,8 +11,8 @@ noremap("n", "<C-d>", "<C-d>zz")
 noremap("n", "<C-u>", "<C-u>zz")
 
 -- Visually move lines
--- noremap("v", "J", ":m '>+1<CR>gv=gv")
--- noremap("v", "K", ":m '<-2<CR>gv=gv")
+noremap("v", "J", ":m '>+1<CR>gv=gv")
+noremap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Better join
 noremap("n", "J", "mzJ`z")
@@ -23,6 +23,10 @@ noremap("n", "N", "Nzzzv")
 
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
+
+-- next greatest remap ever : asbjornHaland
+map({ "n", "v" }, "<leader>y", [["+y]])
+map("n", "<leader>Y", [["+Y]])
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
