@@ -38,7 +38,8 @@ return { -- Collection of various small independent plugins/modules
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
     --  and try some other statusline plugin
-    require 'mini.statusline'.setup { use_icons = true }
+    local statusline = require 'mini.statusline'
+    statusline.setup { use_icons = true }
 
     require('mini.cursorword').setup()
     require('mini.sessions').setup {}
