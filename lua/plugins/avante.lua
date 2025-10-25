@@ -33,57 +33,22 @@ return {
 		lazy = false,
 		version = false,
 		opts = {
-			provider = "copilot_gemini_2.5_pro",
-			cursor_applying_provider = "copilot_gpt_4.1",
-			memory_summary_provider = "copilot_gpt_4.1",
+			provider = "copilot",
+			-- cursor_applying_provider = "copilot/gpt-4.1",
+			-- memory_summary_provider = "copilot/gpt-4.1",
 
 			web_search_engine = {
 				provider = "tavily",
 				proxy = nil,
 			},
 
-			copilot = {
-				endpoint = "https://api.githubcopilot.com/",
-				model = "o4-mini",
-				proxy = nil, -- [protocol://]host[:port] Use this proxy
-				allow_insecure = false, -- Allow insecure server connections
-				timeout = 30000, -- Timeout in milliseconds
-				temperature = 0,
-				max_tokens = 20480,
-			},
-
-			vendors = {
-				copilot_claude = {
-					__inherited_from = "copilot",
-					model = "claude-3.7-sonnet",
-				},
-				copilot_claude_thinking = {
-					__inherited_from = "copilot",
-					model = "claude-3.7-sonnet-thought",
-				},
-				copilot_o1 = {
-					__inherited_from = "copilot",
-					model = "o1",
-				},
-				copilot_o3_mini = {
-					__inherited_from = "copilot",
-					model = "o3-mini",
-				},
-				copilot_gemini = {
-					__inherited_from = "copilot",
-					model = "gemini-2.0-flash-001",
-				},
-				copilot_gpt_4o = {
-					__inherited_from = "copilot",
-					model = "gpt-4o-2024-11-20",
-				},
-				["copilot_gpt_4.1"] = {
-					__inherited_from = "copilot",
-					model = "gpt-4.1",
-				},
-				["copilot_gemini_2.5_pro"] = {
-					__inherited_from = "copilot",
-					model = "gemini-2.5-pro",
+			providers = {
+				copilot = {
+					endpoint = "https://api.githubcopilot.com/",
+					model = "o4-mini",
+					proxy = nil,       -- [protocol://]host[:port] Use this proxy
+					allow_insecure = false, -- Allow insecure server connections
+					timeout = 30000,   -- Timeout in milliseconds
 				},
 			},
 
@@ -95,7 +60,7 @@ return {
 
 			system_prompt = function()
 				local hub = require("mcphub").get_hub_instance()
-				return hub:get_active_servers_prompt()
+				return hub and hub:get_active_servers_prompt() or ""
 			end,
 			-- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
 			custom_tools = function()

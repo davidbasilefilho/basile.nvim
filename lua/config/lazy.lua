@@ -19,8 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		-- import your plugins
-		{ import = "plugins.vscode" },
-		{ import = not vim.g.vscode and "plugins" or "plugins.vscode" },
+		{ import = "plugins" },
 	},
 	git = {
 		timeout = 9999, -- no timeout, my laptop sucks
