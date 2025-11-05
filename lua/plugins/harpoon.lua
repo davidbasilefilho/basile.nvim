@@ -4,6 +4,7 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 
 	config = function()
+		local snacks = require("snacks")
 		local harpoon = require("harpoon")
 		harpoon:setup({})
 
@@ -19,7 +20,7 @@ return {
 		end
 
 		vim.keymap.set("n", "<leader>he", function()
-			Snacks.picker({
+			snacks.picker({
 				finder = generate_harpoon_picker,
 				win = {
 					input = {

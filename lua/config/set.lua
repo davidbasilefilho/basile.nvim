@@ -6,7 +6,6 @@ vim.opt.showmode = false
 
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
@@ -42,7 +41,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 750
 
 vim.opt.colorcolumn = ""
 vim.opt.timeoutlen = 300
