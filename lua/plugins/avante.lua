@@ -38,24 +38,33 @@ return {
 			-- memory_summary_provider = "copilot/gpt-4.1",
 
 			web_search_engine = {
-				provider = "tavily",
-				proxy = nil,
+				provider = "tavily", -- tavily, serpapi, google, kagi, brave, or searxng
+				proxy = nil,     -- proxy support, e.g., http://127.0.0.1:7890
 			},
 
 			providers = {
 				copilot = {
 					endpoint = "https://api.githubcopilot.com/",
-					model = "o4-mini",
+					model = "gpt-5-mini",
 					proxy = nil,       -- [protocol://]host[:port] Use this proxy
 					allow_insecure = false, -- Allow insecure server connections
 					timeout = 30000,   -- Timeout in milliseconds
 				},
 			},
 
+			input = {
+				provider = "snacks",
+				provider_opts = {
+					title = "Avante Input",
+					icon = " ",
+					placeholder = "Enter your API key...",
+				},
+			},
+
 			behaviour = {
 				auto_suggestions = false,
-				enable_cursor_planning_mode = true,
 				minimize_diffs = true,
+				auto_apply_diff_after_generation = true,
 			},
 
 			system_prompt = function()
